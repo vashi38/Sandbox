@@ -1,5 +1,4 @@
 import React from "react";
-import styles, { css } from "./styles.scss";
 import styled from "styled-components";
 
 const RadioBtn = styled.div`
@@ -32,20 +31,21 @@ class Radio extends React.Component {
       onClick(value);
     }
   };
+
   render() {
-    const { value, currentValue, children } = this.props;
+    const { value, currentValue, children, checkedColor } = this.props;
     const checked = value === currentValue;
     return (
       <FlexDiv onClick={this.onClick}>
-        <RadioBtn
-          checkedColor="blue"
-          className={styles.radioBtn}
-          checked={checked}
-        />
+        <RadioBtn checkedColor={checkedColor} checked={checked} />
         {children}
       </FlexDiv>
     );
   }
 }
+
+Radio.defaultProps = {
+  checkedColor: "blue"
+};
 
 export default Radio;
