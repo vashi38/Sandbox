@@ -7,14 +7,17 @@ const RadioBtn = styled.div`
   width: 15px;
   height: 15px;
   border-radius: 50%;
+  margin-right: 5px;
   box-shadow: inset 0 0 0 1px lightgrey,
     inset 0 0 0 ${props => (props.checked ? "3px" : "10px")} #fff;
   transition: box-shadow 1s;
 `;
 
-const FlexDiv = styled.div`
+const FlexDiv = styled.span`
   display: flex;
   justify-content: flex-start;
+  margin-right: 10px;
+  cursor: pointer;
 `;
 
 class Radio extends React.Component {

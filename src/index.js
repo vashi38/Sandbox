@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Radio from "./components/Buttons/Radio";
+import styled from "styled-components";
 
+const AppWrapper = styled.div`
+  display: flex;
+`;
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +22,7 @@ class App extends React.Component {
   render() {
     const { currentValue } = this.state;
     return (
-      <div className="App">
+      <AppWrapper className="App">
         <Radio
           value="Yes"
           currentValue={currentValue}
@@ -33,7 +37,7 @@ class App extends React.Component {
         >
           No
         </Radio>
-      </div>
+      </AppWrapper>
     );
   }
 }
